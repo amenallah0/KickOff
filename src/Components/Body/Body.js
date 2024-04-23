@@ -6,8 +6,8 @@ import './Body.css';
 function Body() {
     return (
         <div> 
-            <Joueur />
-            <Stade />
+            <Joueur/>
+            <Stade/>
         </div>
     );
 }
