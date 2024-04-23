@@ -1,0 +1,90 @@
+.joueur-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
+    background: rgb(83, 79, 136);
+}
+.top-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Ajustez la marge selon vos besoins */
+}
+
+.carousel-container {
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: x-large;
+    font-family: 'Roboto', sans-serif; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    
+
+}
+
+.captain {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+.caption {
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    top: 3vw;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+    font-family: 'Roboto', sans-serif; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+.caption2{
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 3vw;
+    left: 37vw;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+    font-family: 'Roboto', sans-serif; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+.carousel .slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.carousel .slider-wrapper .slider {
+    margin: 0;
+    width: 100%; 
+}
+
+.carousel .slider-wrapper .slider .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: auto; 
+}
+
+.global-container {
+    min-height: 40vh; /* Définit une hauteur minimale de 80% de la hauteur de la fenêtre */
+}
+
+

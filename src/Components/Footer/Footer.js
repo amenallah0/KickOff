@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const footer = document.querySelector('.footer');
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+        const windowHeight = window.innerHeight;
+        setIsVisible(scrollY + windowHeight >= footerTop);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className='footer'>
+    <div className={`footer ${isVisible ? 'visible' : ''}`}>
         <ul>
             <li> Merci Pour Votre Confiance</li>
             <li> Merci Pour Choisir KickOff</li>
