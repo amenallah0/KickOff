@@ -1,0 +1,21 @@
+/* Footer.css */
+.footer {
+    height: 180px;
+    background: linear-gradient(70deg, rgb(1, 1, 104), rgb(36, 36, 36));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
+  }
+  
+  .social-icons a {
+    margin-right: 40px;
+  }
+  
+  .social-icons img {
+    height: 90px;
+    width: 90px;
+  }
