@@ -75,7 +75,7 @@ function Joueur() {
                 
             </div>
             <div className='joueur-container'>
-                {/* Première section */}
+                {/* troisième section */}
                 <div className='top-section'>
                     <img src={stade} alt='stade' className='images'></img>
                 </div>

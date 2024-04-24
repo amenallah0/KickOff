@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './Stade.css';
 import { CarouselItem } from "./Carouselitem";
-//bibliotheque of Drawer 
 import {
   Drawer,
   DrawerOverlay,
@@ -10,12 +9,22 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerFooter,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  Input,
+  Button,
+  Box,
+  Stack,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+  Select,
+  Textarea
 } from '@chakra-ui/react';
-import { FormControl, FormLabel, FormErrorMessage, Input, Button, Box,  } from '@chakra-ui/react';
-import { useDisclosure } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
-import { Stack } from '@chakra-ui/react';
-import { InputGroup, InputLeftAddon, InputRightAddon, Select, Textarea } from '@chakra-ui/react';
+import { useDisclosure } from '@chakra-ui/react';
+
 const Stade = ({ scrollY, threshold }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const sliderRef = useRef(null);
@@ -67,8 +76,10 @@ const Stade = ({ scrollY, threshold }) => {
 
     return () => clearInterval(intervalId);
   }, []);
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const firstField = React.useRef()
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const firstField = useRef();
+
   return (
     <div ref={sliderRef} className="carousel sliding-slider-component" id="Slide">
       <div className="inner" style={{ transform: `translate(-${activeIndex * 100}%)` }}>
@@ -86,77 +97,63 @@ const Stade = ({ scrollY, threshold }) => {
         </div>
       </div>
 
-      {/* <div className="carousel-buttons">
-        <button className="button-arrow" onClick={() => updateIndex(activeIndex - 1)}>
-          <ArrowLeftIcon />
-        </button>
-        <button className="button-arrow" onClick={() => updateIndex(activeIndex + 1)}>
-          <ArrowRightIcon />
-        </button>
-      </div> */}
-      
-       
-        <Drawer
-          isOpen={isOpen}
-          placement='right'
-          initialFocusRef={firstField}
-          onClose={onClose}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader borderBottomWidth='1px'>
-              Créer une nouvelle demande
-            </DrawerHeader>
-  
-            <DrawerBody>
-              <Stack spacing='24px'>
-                <Box>
-                  <FormLabel htmlFor='username'>Nom Complet</FormLabel>
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        initialFocusRef={firstField}
+        onClose={onClose}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader borderBottomWidth='1px'>
+            Créer une nouvelle demande
+          </DrawerHeader>
+          <DrawerBody>
+            <Stack spacing='24px'>
+              <Box>
+                <FormLabel htmlFor='username'>Nom Complet</FormLabel>
+                <Input
+                  ref={firstField}
+                  id='username'
+                  placeholder='Please enter user name'
+                />
+              </Box>
+              <Box>
+                <FormLabel htmlFor='url'>Url</FormLabel>
+                <InputGroup>
+                  <InputLeftAddon>http://</InputLeftAddon>
                   <Input
-                    ref={firstField}
-                    id='username'
-                    placeholder='Please enter user name'
+                    type='url'
+                    id='url'
+                    placeholder='Please enter domain'
                   />
-                </Box>
-  
-                <Box>
-                  <FormLabel htmlFor='url'>Url</FormLabel>
-                  <InputGroup>
-                    <InputLeftAddon>http://</InputLeftAddon>
-                    <Input
-                      type='url'
-                      id='url'
-                      placeholder='Please enter domain'
-                    />
-                    <InputRightAddon>.com</InputRightAddon>
-                  </InputGroup>
-                </Box>
-  
-                <Box>
-                  <FormLabel htmlFor='owner'>Select Owner</FormLabel>
-                  <Select id='owner' defaultValue='segun'>
-                    <option value='segun'>Segun Adebayo</option>
-                    <option value='kola'>Kola Tioluwani</option>
-                  </Select>
-                </Box>
-  
-                <Box>
-                  <FormLabel htmlFor='desc'>Description</FormLabel>
-                  <Textarea id='desc' />
-                </Box>
-              </Stack>
-            </DrawerBody>
-  
-            <DrawerFooter borderTopWidth='1px'>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='blue'>Submit</Button>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
+                  <InputRightAddon>.com</InputRightAddon>
+                </InputGroup>
+              </Box>
+              <Box>
+                <FormLabel htmlFor='owner'>Select Owner</FormLabel>
+                <Select id='owner' defaultValue='segun'>
+                  <option value='segun'>Segun Adebayo</option>
+                  <option value='kola'>Kola Tioluwani</option>
+                </Select>
+              </Box>
+              <Box>
+                <FormLabel htmlFor='desc'>Description</FormLabel>
+                <Textarea id='desc' />
+              </Box>
+            </Stack>
+          </DrawerBody>
+          <DrawerFooter borderTopWidth='1px'>
+            <Button variant='outline' mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme='blue'>Submit</Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 };
+
 export default Stade;
