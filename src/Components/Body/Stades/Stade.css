@@ -1,15 +1,24 @@
 .container {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 .container2 {
     display: flex;
     flex-direction: row-reverse; /* Reverse the order of flex items */
+    margin-bottom: 20px;
 }
   .description {
     flex: 1;
     margin-right: 10px;
     color: white; /* Adjust the gap between the description and the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .description > Button {
+    margin-top: 30px;
+    align-self: center; /* Align the button to the end of its container */
   }
   h1{
     font-size: larger;
