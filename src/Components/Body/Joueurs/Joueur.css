@@ -4,21 +4,26 @@
     align-items: flex-start;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 15px;
     backdrop-filter: blur(2px);
     background: rgb(83, 79, 136);
+    height: 200px;
 }
+
 .top-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px; /* Ajustez la marge selon vos besoins */
+    margin-top: 10px; 
 }
 
 .carousel-container {
     margin-top: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -26,11 +31,12 @@
     font-family: 'Roboto', sans-serif; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
-    
+    width: 50vw;
+    margin: auto;
 
 }
 
-.captain {
+.images {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -39,30 +45,19 @@
 }
 
 .caption {
-    font-size: 1em;
     font-weight: bold;
     position: absolute;
-    top: 3vw;
-    left: 50vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: x-large;
     font-family: 'Roboto', sans-serif; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-decoration: underline;
+    margin: auto;
 }
 
-.caption2{
-    font-size: 1.5em;
-    font-weight: bold;
-    position: absolute;
-    top: 3vw;
-    left: 37vw;
-    transform: translate(-50%, -50%);
-    font-size: x-large;
-    font-family: 'Roboto', sans-serif; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-decoration: underline;
-}
+
 
 .carousel .slider-wrapper {
     display: flex;
@@ -83,8 +78,6 @@
     height: auto; 
 }
 
-.global-container {
-    min-height: 40vh; /* Définit une hauteur minimale de 80% de la hauteur de la fenêtre */
-}
+
 
 

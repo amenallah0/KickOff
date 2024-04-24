@@ -1,10 +1,9 @@
 .body-container {
     margin: auto;
-    min-height: 450px; /* Utiliser min-height à la place de height */
+    min-height: 350px; 
     width: 90vw;
     border: 1px solid red;
     border-radius: 15px;
     background: linear-gradient(70deg, rgb(228, 228, 230), rgb(43, 24, 128));
-
-    padding: 15px; /* Ajouter du padding pour éviter que le contenu ne touche la bordure */
+    padding: 15px; 
 }
