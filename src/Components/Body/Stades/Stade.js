@@ -1,159 +1,148 @@
-import React, { useState, useEffect, useRef } from "react";
-import './Stade.css';
-import { CarouselItem } from "./Carouselitem";
+import React from 'react';
+import tarton1 from '../../../images/tarton1.jpg';
+import './Stade.css'; // Import your CSS file
 import {
   Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  DrawerFooter,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Input,
+  useDisclosure,
   Button,
-  Box,
-  Stack,
-  InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
-  Select,
-  Textarea
-} from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons';
-import { useDisclosure } from '@chakra-ui/react';
-
-const Stade = ({ scrollY, threshold }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const elementTop = sliderRef.current.getBoundingClientRect().top;
-    const elementHeight = sliderRef.current.offsetHeight;
-
-    if (scrollY >= elementTop - threshold && scrollY <= elementTop + elementHeight) {
-      sliderRef.current.classList.add("animated", "slide-in-left");
-    } else {
-      sliderRef.current.classList.remove("animated", "slide-in-left");
-    }
-  }, [scrollY, threshold]);
-
-  const items = [
-    {
-      title: "Baseball",
-      description: "Créer une équipe",
-    },
-    {
-      title: "Marche",
-      description: "Former une équipe",
-    },
-    {
-      title: "Haltérophilie",
-      description: "Défier d'autres équipes",
-    },
-    {
-      title: "Réservation",
-      description: "Terminer la réservation",
-    },
-  ];
-
-  const updateIndex = (newIndex) => {
-    if (newIndex < 0) {
-      newIndex = 0;
-    } else if (newIndex >= items.length) {
-      newIndex = items.length - 1;
-    }
-
-    setActiveIndex(newIndex);
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 3000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const firstField = useRef();
-
+  Input
+} from '@chakra-ui/react'
+const Stade = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = React.useRef()
   return (
-    <div ref={sliderRef} className="carousel sliding-slider-component" id="Slide">
-      <div className="inner" style={{ transform: `translate(-${activeIndex * 100}%)` }}>
-        {items.map((item, index) => (
-          <CarouselItem
-            key={index}
-            item={item}
-            width={"100%"}
-          />
-        ))}
-        <div className="second" >
-          <Button rightIcon={<AddIcon />} colorScheme='blue' onClick={onOpen} marginLeft={'45%'} marginTop={'30px'}>
-            Créer une demande
-          </Button>
+    <div>
+      <div className='container'>
+        <div className='description'>
+          <h1>Recruter votre tarton</h1>
+          <p>Pour recruter votre tarton et faciliter les réservations pour vos invités, 
+            il est essentiel d'inclure les détails de localisation du tarton.
+            En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton.
+            De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation,
+            garantissant une expérience fluide pour tous les participants.</p>
+            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+            S'inscrire maintenant
+        </Button>
+        <Drawer
+          isOpen={isOpen}
+          placement='right'
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>Create your account</DrawerHeader>
+
+            <DrawerBody>
+              <Input placeholder='Type here...' />
+            </DrawerBody>
+
+            <DrawerFooter>
+              <Button variant='outline' mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme='blue'>Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+
+        </div>
+        <div className='imageContainer'>
+          <img className='image' src={tarton1} alt='Tarton' />
         </div>
       </div>
-
+    <div className='container2'>
+      <div className='description'>
+        <h1>Recruter votre tarton</h1>
+        <p>Pour recruter votre tarton et faciliter les réservations pour vos invités, 
+          il est essentiel d'inclure les détails de localisation du tarton.
+          En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton.
+          De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation,
+          garantissant une expérience fluide pour tous les participants.</p>
+          <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+          S'inscrire maintenant
+      </Button>
       <Drawer
         isOpen={isOpen}
         placement='right'
-        initialFocusRef={firstField}
         onClose={onClose}
+        finalFocusRef={btnRef}
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth='1px'>
-            Créer une nouvelle demande
-          </DrawerHeader>
+          <DrawerHeader>Create your account</DrawerHeader>
+
           <DrawerBody>
-            <Stack spacing='24px'>
-              <Box>
-                <FormLabel htmlFor='username'>Nom Complet</FormLabel>
-                <Input
-                  ref={firstField}
-                  id='username'
-                  placeholder='Please enter user name'
-                />
-              </Box>
-              <Box>
-                <FormLabel htmlFor='url'>Url</FormLabel>
-                <InputGroup>
-                  <InputLeftAddon>http://</InputLeftAddon>
-                  <Input
-                    type='url'
-                    id='url'
-                    placeholder='Please enter domain'
-                  />
-                  <InputRightAddon>.com</InputRightAddon>
-                </InputGroup>
-              </Box>
-              <Box>
-                <FormLabel htmlFor='owner'>Select Owner</FormLabel>
-                <Select id='owner' defaultValue='segun'>
-                  <option value='segun'>Segun Adebayo</option>
-                  <option value='kola'>Kola Tioluwani</option>
-                </Select>
-              </Box>
-              <Box>
-                <FormLabel htmlFor='desc'>Description</FormLabel>
-                <Textarea id='desc' />
-              </Box>
-            </Stack>
+            <Input placeholder='Type here...' />
           </DrawerBody>
-          <DrawerFooter borderTopWidth='1px'>
+
+          <DrawerFooter>
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme='blue'>Submit</Button>
+            <Button colorScheme='blue'>Save</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
+
+      </div>
+      <div className='imageContainer'>
+        <img className='image' src={tarton1} alt='Tarton' />
+      </div>
     </div>
+    <div className='container'>
+        <div className='description'>
+          <h1>Recruter votre tarton</h1>
+          <p>Pour recruter votre tarton et faciliter les réservations pour vos invités, 
+            il est essentiel d'inclure les détails de localisation du tarton.
+            En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton.
+            De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation,
+            garantissant une expérience fluide pour tous les participants.</p>
+            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+            S'inscrire maintenant
+        </Button>
+        <Drawer
+          isOpen={isOpen}
+          placement='right'
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>Create your account</DrawerHeader>
+
+            <DrawerBody>
+              <Input placeholder='Type here...' />
+            </DrawerBody>
+
+            <DrawerFooter>
+              <Button variant='outline' mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme='blue'>Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+
+        </div>
+        <div className='imageContainer'>
+          <img className='image' src={tarton1} alt='Tarton' />
+        </div>
+      </div>
+    </div>
+    
   );
-};
+}
 
 export default Stade;
+
+

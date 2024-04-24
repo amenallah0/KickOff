@@ -1,1 +1,35 @@
-
+.container {
+    display: flex;
+    align-items: center;
+}
+.container2 {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the order of flex items */
+}
+  .description {
+    flex: 1;
+    margin-right: 10px;
+    color: white; /* Adjust the gap between the description and the image */
+  }
+  h1{
+    font-size: larger;
+    font-weight: 700;
+    color: aquamarine;
+    
+  }
+  .imageContainer{
+    flex: 1;
+    display: flex;
+  }
+  .container >.imageContainer {
+    justify-content: flex-end;
+  }
+  
+  .image {
+    width: 400px; /* Set the desired width of the image */
+    height: 400px; /* Set the desired height of the image */
+    border-radius: 50%; /* Set the border-radius to make the image circular */
+  }
+  Drawer{
+    background-color: white;
+  }
