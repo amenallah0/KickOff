@@ -1,44 +1,32 @@
 import React from "react";
-import "./Capitain.css";
-import Captain from "./../../Images/captain.jpg";
+import "./SplachD.css";
+import screenImage from "./../../Images/screenImage.png";
+import appStoreImage from "./../../Images/apple.png"; // Ensure path is correct
+import playStoreImage from "./../../Images/playstore.png"; // Ensure path is correct
 
-function Capitain() {
+function Splach() {
   return (
-    <div className="second-screen">
+    <div className="first-screen">
       <div className="loading-screen">
-        <img src={Captain} alt="captain" className="captain-image" />
+        <img src={screenImage} alt="captain" className="screen-image" />
       </div>
       <div className="content">
-        <h1 className="title">Concept Capitaine</h1>
-        <div className="AboutUs">
+        <h1 className="title">Concept Capitain</h1>
+        <div className="about-us">
           <p>
-            Le rôle du capitaine est central dans l'organisation des activités
-            de son équipe. Il peut créer et personnaliser l'équipe, inviter
-            des membres, rechercher des adversaires pour des matchs, et
-            réserver des terrains pour les rencontres. Ces fonctions permettent
-            au capitaine de diriger et de coordonner efficacement son équipe
-            pour des expériences sportives enrichissantes.
+            Bienvenue dans notre application de réservation de match de football,
+            votre compagnon ultime pour organiser des rencontres sportives
+            passionnantes ! Que vous soyez un joueur occasionnel amical ou un
+            capitaine d'équipe désireux de planifier des matchs compétitifs,
+            notre application simplifie le processus de réservation et de
+            coordination.
           </p>
         </div>
-        <div className="btnGroupe">
-          <button className="btnHero">
-            <img src="apple.png" alt="App Store" />
-            <div className="textButton">
-              <p className="small">Download on the</p>
-              <p className="store">App store</p>
-            </div>
-          </button>
-          <button className="btnHero">
-            <img src="playstore.png" alt="Google Play" />
-            <div className="textButton">
-              <p className="small">Get on the</p>
-              <p className="store">Google play</p>
-            </div>
-          </button>
-        </div>
+        
       </div>
+      
     </div>
   );
 }
 
-export default Capitain;
+export default Splach;

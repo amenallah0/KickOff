@@ -1,7 +1,7 @@
 /* Footer.css */
 .footer {
   height: 125px;
-  width: 97.33%;
+  width: 100%;
   background: linear-gradient(70deg, rgb(1, 1, 104), rgb(36, 36, 36));
   display: flex;
   justify-content: space-between;

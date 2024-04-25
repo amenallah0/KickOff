@@ -3,11 +3,12 @@
     justify-content: space-around; 
     background: #E9EBFD;
     padding: 10px;
-    height: 100vh;
+    height: auto;
+    align-items: center;
 }
 
 .loading-screen {
-    margin: 10px; 
+    margin: 15px; 
 }
 
 .content {
@@ -16,70 +17,86 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
-    justify-items: flex-start;
+    justify-content: center;
 }
 
 .title {
-    font-size: 5rem; /* Set the font size of the title */
-    margin-bottom: 30px;
-    font-weight: bolder; /* Add some space below the title */
-    text-transform: none;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
     color: black;
+    text-align: center;
 }
 
-.AboutUs {
-    line-height: 1.6; /* Increase the line height for better readability */
-    margin-top: 2px; /* Add some top margin */
-    font-size: 1rem; /* Set the font size */
+.about-us {
+    line-height: 1.6;
+    margin-top: 2px;
+    font-size: 1.2rem;
+    text-align: justify;
 }
 
-.AboutUs p {
-    margin-bottom: 15px; /* Add some bottom margin to paragraphs */
+.about-us p {
+    margin-bottom: 15px;
 }
 
-.btnGroupe {
-    display: flex; /* Display the buttons inline */
+.btn-group {
+    display: flex;
+    justify-content: center;
 }
 
-.btnHero {
+.btn-hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent; /* Transparent background */
+    background-color: transparent;
     border: 2px solid black;
-    border-radius: 10px; /* Blue border */
-    color: black; /* Blue text color */
-    margin-right: 10px; 
-    width: 13rem;
-    height: 5rem;/* Add some right margin to separate the buttons */
-    
+    border-radius: 10px;
+    color: black;
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 80px;
 }
 
-.btnHero img {
-    width: 50px; /* Set the width of the image */
-    margin-right: 10px; /* Add some right margin to the image */
+.btn-hero img {
+    width: 30px;
+    margin-right: 10px;
 }
 
-.textButton {
-    text-align: center; /* Center the text */
+.text-button {
+    text-align: left;
 }
 
 .small {
-    font-size: small; /* Small font size */
-    /* Add some bottom margin to separate the text */
+    font-size: 0.8rem;
 }
 
 .store {
     font-weight: bold;
-    font-size: larger; /* Bold font weight */
+    font-size: 1.2rem;
 }
-
-
-
 
 @media (max-width: 768px) {
     .first-screen {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-hero {
+        width: 250px;
+        height: 60px;
+        font-size: 0.9rem;
     }
 }
 

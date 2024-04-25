@@ -10,6 +10,7 @@ function Body() {
         <div> 
             <Splach />
             <Capitain />
+            <Joueur />
         </div>
     );
 }
