@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { List, ListItem, ListIcon } from '@chakra-ui/react';
 
 import './Joueur.css';
-import captain from './../../Images/captain.webp';
+import captain from './../../Images/captain.jpg';
 import joueur from './../../Images/joueur.jpg';
 import stade from './../../Images/stade.jpg'
 
@@ -31,7 +31,7 @@ function Joueur() {
                     <img src={captain} alt='captain' className='images'></img>
                 </div>
                 <div className='carousel-container'>
-                    <Carousel showArrows={false} showThumbs={false} showStatus={false} autoPlay interval={2000} infiniteLoop showIndicators={false}>
+                    <Carousel showArrows={false} showThumbs={false} showStatus={false} autoPlay interval={4000} infiniteLoop showIndicators={false}>
                         <div className='caption'>Concept Capitaine</div>
                         {steps1.map((step, index) => (
                             <div key={index}>
@@ -53,7 +53,7 @@ function Joueur() {
                 {/* Deuxième section */}
                 <div className='carousel-container'>
 
-                    <Carousel showArrows={false} showThumbs={false} showStatus={false} autoPlay interval={2000} infiniteLoop showIndicators={false}>
+                    <Carousel showArrows={false} showThumbs={false} showStatus={false} autoPlay interval={4000} infiniteLoop showIndicators={false}>
                         <p className='caption'> Concept Joueur </p>
                         {steps2.map((step, index) => (
                             <div key={index}>
@@ -80,7 +80,7 @@ function Joueur() {
                     <img src={stade} alt='stade' className='images'></img>
                 </div>
                 <div className='carousel-container'>
-                    <Carousel showArrows={false} showThumbs={false} showStatus={false} autoPlay interval={2000} infiniteLoop showIndicators={false}>
+                    <Carousel showArrows={false} showThumbs={false} showStatus={false} autoPlay interval={4000} infiniteLoop showIndicators={false}>
                         <div className='caption'>Réservation des stades</div>
                         {steps3.map((step, index) => (
                             <div key={index}>

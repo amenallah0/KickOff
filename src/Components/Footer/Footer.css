@@ -1,6 +1,7 @@
 /* Footer.css */
 .footer {
   height: 125px;
+  width: 97.33%;
   background: linear-gradient(70deg, rgb(1, 1, 104), rgb(36, 36, 36));
   display: flex;
   justify-content: space-between;
@@ -11,7 +12,6 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
   opacity: 0; 
   transition: opacity 0.5s; 
-  margin-top: 25px;
 }
 
 .footer.visible {

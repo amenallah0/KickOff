@@ -1,0 +1,75 @@
+.second-screen {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  height: 100vh;
+}
+
+.loading-screen {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.captain-image {
+  max-width: 50%;
+  height: auto;
+}
+
+.content {
+  flex: 0.5;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.AboutUs {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.btnGroupe {
+  display: flex;
+  margin-top: 20px;
+}
+
+.btnHero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  margin-right: 10px;
+  width: 150px;
+  height: 50px;
+}
+
+.btnHero img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.textButton {
+  text-align: center;
+}
+
+.small {
+  font-size: small;
+}
+
+.store {
+  font-weight: bold;
+  font-size: 1rem;
+}

@@ -1,14 +1,12 @@
 .first-container {
     height: 100px;
-    width: 90%;
-    background: linear-gradient(70deg, rgb(1, 1, 104), rgb(36, 36, 36));
+    width: 97.33%;
+    background: transparent;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    border-radius: 0 0 20px 20px;
-    margin-bottom: 25px;
 }
 
 .logo-container {
@@ -19,14 +17,13 @@
 .logo {
     height: 60px;
     width: 60px;
-    margin-right: 10px;
-    border-radius: 30px;
+    margin-right: 15px;
 }
 
 .logo-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    color: black;
 }
 
 nav ul {
@@ -40,18 +37,16 @@ nav ul li {
     margin-right: 25px;
 }
 
-button {
+.buttons {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: white;
+    color: black;
     transition: background-color 0.4s, color 0.4s, border-radius 0.4s;
 }
 
-button:hover {
-    background-color: #010101; /* Green */
-    color: white;
-    border-radius: 35px;
+.buttons:hover {
+    color: blue;
 }
 
 @media (max-width: 768px) {
