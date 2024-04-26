@@ -1,8 +1,6 @@
 import React from "react";
 import "./Capitain.css";
 import screenImage from "./../../Images/screenImage.png";
-import appStoreImage from "./../../Images/apple.png"; // Ensure path is correct
-import playStoreImage from "./../../Images/playstore.png"; // Ensure path is correct
 
 function Capitain() {
   return (
@@ -22,9 +20,7 @@ function Capitain() {
             coordination.
           </p>
         </div>
-        
       </div>
-      
     </div>
   );
 }

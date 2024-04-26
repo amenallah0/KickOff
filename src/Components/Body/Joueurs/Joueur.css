@@ -1,7 +1,6 @@
 .third-screen {
     display: flex;
     justify-content: space-around; 
-    background: #E9EBFD;
     padding: 10px;
     height: auto;
     align-items: center;

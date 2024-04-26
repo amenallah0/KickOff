@@ -1,38 +1,45 @@
 .container {
   display: flex;
   align-items: center;
+  background: #e9ebfd;
+  width: 100vw;
 }
 .imageContainer {
-  margin-right: 50px; /* Add a gap of 20px between the image and text */
+  margin:20px /* Add a gap of 20px between the image and text */
 }
 
 .carousel-item-text {
   flex: 1; /* Take up remaining space */
-  text-align: left; /* Align text to the right */
-  align-items: right;
-  width: 600px;
+  margin-left: 25px;
 }
-  .inner {
-    white-space: nowrap;
-    transition: transform 0.3s;
-  }
-  
-  .carousel-item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-  }
-  
-  .carousel-item-text {
-    font-size: 1.2rem;
-    white-space: normal;
-    color: #617d98;
-    margin-right: 10px;
-  }
-  .carousel-img {
-    width: 400px; /* Set the desired width of the image */
-    height: 400px; /* Set the desired height of the image */
-    /* border-radius: 50%; Set the border-radius to make the image circular */
-  }
-  
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  display: flex; /* Utiliser flexbox pour aligner les éléments horizontalement */
+}
+
+.carousel {
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.carousel-item {
+  flex: 0 0 100%; /* Ne pas permettre aux éléments de se rétrécir */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.carousel-item-text {
+  font-size: 1.2rem;
+  white-space: normal;
+  color: #617d98;
+  margin-right: 10px;
+}
+
+.carousel-img {
+  width: 400px; /* Set the desired width of the image */
+  height: 400px; /* Set the desired height of the image */
+  border-radius: 25px; 
+}
+

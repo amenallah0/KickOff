@@ -51,7 +51,7 @@ const Stade = () => {
         {items.map((item) => (
           <CarouselItem
             item={item}
-            width={"100%"}
+            width={"90%"}
             indexer={(indexer++)%2==0?1:2}
           />
         ))}

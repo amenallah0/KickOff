@@ -1,49 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    function handleScroll() {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const footer = document.querySelector('.footer');
-      if (footer) {
-        const footerTop = footer.getBoundingClientRect().top + window.scrollY;
-        const windowHeight = window.innerHeight;
-        setIsVisible(scrollY + windowHeight >= footerTop);
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+const Footer = () => {
   return (
-    <div className={`footer ${isVisible ? 'visible' : ''}`}>
-        <ul>
-            <li> Merci Pour Votre Confiance</li>
-            <li> Merci Pour Choisir KickOff</li>
-            <li> Pour nous contacter, Applez nous sur </li>
-            <li> 197197197 </li>
-        </ul>
-        <div className='social-icons'>
-          <a href='lien-vers-votre-page-facebook' target='_blank' rel='noopener noreferrer'>
-            <FontAwesomeIcon icon={faFacebook} size='2x' />
-          </a>
-          <a href='lien-vers-votre-page-instagram' target='_blank' rel='noopener noreferrer'>
-            <FontAwesomeIcon icon={faInstagram} size='2x' />
-          </a>
-          <a href='lien-vers-votre-page-youtube' target='_blank' rel='noopener noreferrer'>
-            <FontAwesomeIcon icon={faYoutube} size='2x' />
-          </a>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <h4>About Us</h4>
+          <p>Adeptes du football ? Découvrez notre application de réservation de match, 
+            votre allié idéal pour organiser des rencontres palpitantes. 
+            Notre Application simplifie le processus de réservation et de coordination, 
+            vous permettant de vous concentrer sur l'essentiel !</p>
         </div>
-    </div>
+
+        <div className="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>Email: example@email.com</li>
+            <li>Address: Monastir Tunisie</li>
+            <li>Phone: +51076121</li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Social Media</h4>
+          <ul className="social-icons">
+            <li>
+              <a href="https://www.facebook.com/">
+                <FontAwesomeIcon icon={faFacebookF} style={{ color: '#3b5998' }}/>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/">
+                <FontAwesomeIcon icon={faInstagram} style={{ color: '#e1306c' ,marginLeft:'10px'}}/>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/">
+                <FontAwesomeIcon icon={faYoutube} style={{ color: '#ff0000' ,marginLeft:'10px'}}/>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-copyright">
+        <p style={{textAlign:'center'}}>&copy; 2024 KickOff</p>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;
