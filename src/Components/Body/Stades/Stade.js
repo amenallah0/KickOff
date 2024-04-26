@@ -1,147 +1,64 @@
-import React from 'react';
-import tarton1 from '../../../images/tarton1.jpg';
-import './Stade.css'; // Import your CSS file
-import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Button,
-  Input
-} from '@chakra-ui/react'
+import React, { useState, useEffect, useRef, useContext } from "react";
+import tarton1 from "../../../images/tarton1.jpg";
+import "./Stade.css"; // Import your CSS file
+import CarouselItem from "./Carouselitem";
+
 const Stade = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const items = [
+    {
+      title: "Recruter votre tarton",
+      description: "Pour recruter votre tarton et faciliter les réservations pour vos invités, il est essentiel d'inclure les détails de localisation du tarton. En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton. De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation, garantissant une expérience fluide pour tous les participants.",
+      buttonLabel: "S'inscrire maintenant",
+      imageSrc: tarton1,
+    },
+    {
+      title: "Recruter votre tarton",
+      description: "Pour recruter votre tarton et faciliter les réservations pour vos invités, il est essentiel d'inclure les détails de localisation du tarton. En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton. De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation, garantissant une expérience fluide pour tous les participants.",
+      buttonLabel: "S'inscrire maintenant",
+      imageSrc: tarton1,
+    },
+    {
+      title: "Recruter votre tarton",
+      description: "Pour recruter votre tarton et faciliter les réservations pour vos invités, il est essentiel d'inclure les détails de localisation du tarton. En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton. De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation, garantissant une expérience fluide pour tous les participants.",
+      buttonLabel: "S'inscrire maintenant",
+      imageSrc: tarton1,
+    },
+  ];
+
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = 0;
+    } else if (newIndex >= items.length) {
+      newIndex = items.length - 1;
+    }
+
+    setActiveIndex(newIndex);
+  };
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 3000); // Update every 3 seconds
+
+    return () => clearInterval(intervalId); // Clear interval on unmount
+  }, []);
+  let indexer=1;
   return (
-    <div>
-      <div className='container'>
-        <div className='description'>
-          <h1>Recruter votre tarton</h1>
-          <p>Pour recruter votre tarton et faciliter les réservations pour vos invités, 
-            il est essentiel d'inclure les détails de localisation du tarton.
-            En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton.
-            De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation,
-            garantissant une expérience fluide pour tous les participants.</p>
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-            S'inscrire maintenant
-        </Button>
-        <Drawer
-          isOpen={isOpen}
-          placement='right'
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
-
-            <DrawerBody>
-              <Input placeholder='Type here...' />
-            </DrawerBody>
-
-            <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='blue'>Save</Button>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-
-        </div>
-        <div className='imageContainer'>
-          <img className='image' src={tarton1} alt='Tarton' />
-        </div>
-      </div>
-    <div className='container2'>
-      <div className='description'>
-        <h1>Recruter votre tarton</h1>
-        <p>Pour recruter votre tarton et faciliter les réservations pour vos invités, 
-          il est essentiel d'inclure les détails de localisation du tarton.
-          En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton.
-          De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation,
-          garantissant une expérience fluide pour tous les participants.</p>
-          <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-          S'inscrire maintenant
-      </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement='right'
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
-
-          <DrawerBody>
-            <Input placeholder='Type here...' />
-          </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-
-      </div>
-      <div className='imageContainer'>
-        <img className='image' src={tarton1} alt='Tarton' />
+    <div ref={sliderRef} className="carousel sliding-slider-component" id="Slide">
+      <div className="inner" style={{ transform: `translate(-${activeIndex * 100}%)` }}>
+        {items.map((item) => (
+          <CarouselItem
+            item={item}
+            width={"100%"}
+            indexer={(indexer++)%2==0?1:2}
+          />
+        ))}
       </div>
     </div>
-    <div className='container'>
-        <div className='description'>
-          <h1>Recruter votre tarton</h1>
-          <p>Pour recruter votre tarton et faciliter les réservations pour vos invités, 
-            il est essentiel d'inclure les détails de localisation du tarton.
-            En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton.
-            De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation,
-            garantissant une expérience fluide pour tous les participants.</p>
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-            S'inscrire maintenant
-        </Button>
-        <Drawer
-          isOpen={isOpen}
-          placement='right'
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
-
-            <DrawerBody>
-              <Input placeholder='Type here...' />
-            </DrawerBody>
-
-            <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='blue'>Save</Button>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-
-        </div>
-        <div className='imageContainer'>
-          <img className='image' src={tarton1} alt='Tarton' />
-        </div>
-      </div>
-    </div>
-    
   );
-}
+};
 
 export default Stade;
 

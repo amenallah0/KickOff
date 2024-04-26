@@ -1,12 +1,12 @@
 import React from "react";
-import "./SplachD.css";
+import "./Capitain.css";
 import screenImage from "./../../Images/screenImage.png";
 import appStoreImage from "./../../Images/apple.png"; // Ensure path is correct
 import playStoreImage from "./../../Images/playstore.png"; // Ensure path is correct
 
-function Splach() {
+function Capitain() {
   return (
-    <div className="first-screen">
+    <div className="second-screen">
       <div className="loading-screen">
         <img src={screenImage} alt="captain" className="screen-image" />
       </div>
@@ -29,4 +29,4 @@ function Splach() {
   );
 }
 
-export default Splach;
+export default Capitain;

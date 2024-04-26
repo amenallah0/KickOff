@@ -11,6 +11,7 @@ function Body() {
             <Splach />
             <Capitain />
             <Joueur />
+            <Stade/>
         </div>
     );
 }
