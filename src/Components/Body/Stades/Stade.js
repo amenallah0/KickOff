@@ -17,6 +17,7 @@ const Stade = () => {
 <div className='container' id="stade">
     <Carousel images={images} />
     <div className="carousel-item-text">
+    <h1 className="title">Concept Stade</h1>
       Pour recruter votre tarton et faciliter les réservations pour vos invités, 
       il est essentiel d'inclure les détails de localisation du tarton. En fournissant l'adresse exacte ou les coordonnées, les invités peuvent facilement se rendre à l'endroit où se trouve le tarton. 
       De plus, inclure des repères ou des indications pertinentes peut encore simplifier le processus de réservation, garantissant une expérience fluide pour tous les participants.
