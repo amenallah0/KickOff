@@ -6,7 +6,7 @@ import playStoreImage from "./../../Images/playstore.png"; // Ensure path is cor
 
 function Splach() {
   return (
-    <div className="first-screen">
+    <div className="first-screen" id="home">
       <div className="content">
         <h1 className="title">KickOff your sport life</h1>
         <div className="about-us">

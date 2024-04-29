@@ -4,7 +4,7 @@ import screenImage from "./../../Images/screenImage.png";
 
 function Capitain() {
   return (
-    <div className="second-screen">
+    <div className="second-screen" id="capitain">
       <div className="loading-screen">
         <img src={screenImage} alt="captain" className="screen-image" />
       </div>

@@ -4,7 +4,7 @@ import screenImage from "./../../Images/screenImage.png";
 
 function Joueur() {
   return (
-    <div className="third-screen">
+    <div className="third-screen" id="joueur">
       <div className="content">
         <h1 className="title">Concept Joueur</h1>
         <div className="about-us">

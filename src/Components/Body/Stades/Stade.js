@@ -14,7 +14,7 @@ const Stade = () => {
   ];
   return (
   
-<div className='container'>
+<div className='container' id="stade">
     <Carousel images={images} />
     <div className="carousel-item-text">
       Pour recruter votre tarton et faciliter les réservations pour vos invités, 

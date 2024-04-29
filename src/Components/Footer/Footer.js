@@ -5,7 +5,7 @@ import { faFacebookF, faInstagram, faYoutube } from '@fortawesome/free-brands-sv
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id='contact'> {/* Ensure that the ID matches the one used in Navbar */}
       <div className="footer-content">
         <div className="footer-section">
           <h4>About Us</h4>
