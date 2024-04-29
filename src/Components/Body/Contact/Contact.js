@@ -67,7 +67,9 @@ function Contact() {
               <FormLabel>Message</FormLabel>
               <Textarea placeholder="Votre message" variant="filled" />
             </FormControl>
+            <div style={{textAlign: 'center', marginTop:'10px'}}> {/* Center the button */}
             <Button colorScheme="blue">Soumettre</Button>
+          </div>
           </div>
 
           {/* Image on the left for smaller screens */}
