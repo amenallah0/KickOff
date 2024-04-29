@@ -5,7 +5,7 @@ import { faFacebookF, faInstagram, faYoutube } from '@fortawesome/free-brands-sv
 
 const Footer = () => {
   return (
-    <footer className="footer" id='contact'> {/* Ensure that the ID matches the one used in Navbar */}
+<footer className="footer" style={{ backgroundColor: '#E9EBFD' }}>
       <div className="footer-content">
         <div className="footer-section">
           <h4>About Us</h4>
@@ -28,7 +28,7 @@ const Footer = () => {
           <h4>Social Media</h4>
           <ul className="social-icons">
             <li>
-              <a href="https://www.facebook.com/">
+              <a href="https://www.facebook.com/profile.php?id=61557558519109">
                 <FontAwesomeIcon icon={faFacebookF} style={{ color: '#3b5998' }}/>
               </a>
             </li>
@@ -38,7 +38,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.youtube.com/">
+              <a href="https://www.youtube.com/@KickOffTN">
                 <FontAwesomeIcon icon={faYoutube} style={{ color: '#ff0000' ,marginLeft:'10px'}}/>
               </a>
             </li>

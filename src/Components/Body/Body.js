@@ -4,13 +4,15 @@ import Joueur from './Joueurs/Joueur';
 import Capitain from './Joueurs/Capitain';
 import Splach from './Joueurs/Splach';
 import './Body.css'; 
+import Contact from './Contact/Contact';
 function Body() {
     return (
         <div> 
             <Splach />
             <Capitain />
             <Joueur />
-            <Stade/>         
+            <Stade/>      
+            <Contact />   
         </div>
     );
 }
