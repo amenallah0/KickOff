@@ -1,5 +1,5 @@
 .contact-form-inner {
-  width: 600px; 
+  width: 95vw; 
   height: 500px;/* Adjust width as needed */
   border: 1px solid #898888; /* Border around the form content */
   padding: 1rem; /* Adjust padding if needed */
@@ -30,7 +30,7 @@
 .Contact-container{
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 90vw;
   gap: 80px;
 }
 
