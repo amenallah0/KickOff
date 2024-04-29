@@ -22,19 +22,25 @@
   overflow-x: hidden; /* Hide horizontal overflow */
 }
 
-.carousel-item {
-  flex: 0 0 100%; /* Ne pas permettre aux éléments de se rétrécir */
+/* .carousel-item {
+  flex: 0 0 100%; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
-}
+} */
 
 .carousel-item-text {
   font-size: 1.2rem;
   white-space: normal;
   color: #617d98;
   margin-right: 10px;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .carousel-img {

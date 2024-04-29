@@ -1,0 +1,15 @@
+.image-slider {
+    width: 400px;
+    margin-left: 30px;
+    margin-right:30px ;
+    text-align: center;
+  }
+  .image-slider .slick-dots {
+    bottom: -30px;
+  }
+  .image-slider img {
+    width: 400px; /* Set the desired width of the image */
+    height: 400px; /* Set the desired height of the image */
+    border-radius: 25px; 
+    margin: 0px;
+  }

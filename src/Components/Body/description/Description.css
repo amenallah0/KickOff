@@ -1,0 +1,10 @@
+.drawer_button{
+    align-self: center;
+     
+}
+.centred-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
