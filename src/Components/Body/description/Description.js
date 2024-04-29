@@ -8,7 +8,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Select,
   Box,
   FormLabel,
   Textarea,
@@ -16,8 +15,6 @@ import {
   Input,
   Stack,
   InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
   useDisclosure
 } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
@@ -66,7 +63,15 @@ const Description = () => {
                   />
                 </InputGroup>
               </Box>
-
+              <Box>
+                <FormLabel htmlFor='Phone'>Phone Number</FormLabel>
+                <InputGroup>
+                  <Input
+                    id='Phone'
+                    placeholder='+216.....'
+                  />
+                </InputGroup>
+              </Box>
               <Box>
                 <FormLabel htmlFor='owner'>Propriétaire</FormLabel>
                 <Input
