@@ -1,14 +1,17 @@
+
 .footer {
-  background-color: transparent;
+  background-color:  #E9EBFD;
   color: black;
   padding: 20px;
   text-align: left;
+  
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  
 }
 
 .footer-section {
@@ -50,21 +53,65 @@
   font-weight: bold; /* Make copyright text bold */
 }
 
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
+.footer {
+  background-color: transparent;
+  color: black;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-section {
+  flex-basis: 30%;
+  padding: 10px;
+  text-align: center; /* Centrer le texte */
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  font-weight: bold; /* Make section headings bold */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #000000;
+  font-size: 25px;
+  justify-content: space-around;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold; /* Make copyright text bold */
+}
+
+@media (max-width: 768px) {
   .footer-section {
     flex-basis: 100%;
   }
 }
-
-/* Icons */
-.fab {
-  font-family: 'Font Awesome 5 Pro'; /* Replace with your Font Awesome Pro font family name */
-}
-
