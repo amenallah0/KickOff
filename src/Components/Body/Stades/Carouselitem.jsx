@@ -13,8 +13,6 @@ const Carousel = ({ images }) => {
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
-    prevArrow: <div> </div>,
-    nextArrow:<div> </div>
   };
 
   return (

@@ -18,7 +18,7 @@ import ContactImage from './../../Images/contact.jpg'; // Import your image
 
 function Contact() {
   return (
-    <div className='Contact-container'>
+    <div className='Contact-container' id='contact'>
     <div className='contact-form-inner'>
       <Container maxW="xl" centerContent>
         <Stack spacing={6} direction={['column', 'row']} width="100%" maxW="xl" marginTop={6}>

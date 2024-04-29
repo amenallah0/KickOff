@@ -129,5 +129,6 @@ nav ul li {
 }
 
 .buttons li button:hover {
-    background-color: #eee; /* Light background on hover for better interaction feedback */
+    background-color: #f1f1f1; /* Light background on hover for better interaction feedback */
+    border-radius: 15px;
 }

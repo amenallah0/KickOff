@@ -3,11 +3,12 @@
   align-items: center;
   background: #e9ebfd;
   width: auto;
-  overflow-x: hidden;
-  padding-right: 30px;
+  overflow: hidden;
+  padding:30px 40px 30px 10px;
+  
 }
 .imageContainer {
-  margin:20px /* Add a gap of 20px between the image and text */
+  margin:20px; /* Add a gap of 20px between the image and text */
 }
 
 .carousel-item-text {
