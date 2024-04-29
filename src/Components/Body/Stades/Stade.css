@@ -2,7 +2,9 @@
   display: flex;
   align-items: center;
   background: #e9ebfd;
-  width: 100vw;
+  width: auto;
+  overflow-x: hidden;
+  padding-right: 30px;
 }
 .imageContainer {
   margin:20px /* Add a gap of 20px between the image and text */
@@ -11,17 +13,11 @@
 .carousel-item-text {
   flex: 1; /* Take up remaining space */
   margin-left: 25px;
+  padding-left: 25px;
+  line-height: 1.6;
+  margin-top: 2px;
+  font-size: 1.2rem;
 }
-.inner {
-  white-space: nowrap;
-  transition: transform 0.3s;
-  display: flex; /* Utiliser flexbox pour aligner les éléments horizontalement */
-}
-
-.carousel {
-  overflow-x: hidden; /* Hide horizontal overflow */
-}
-
 /* .carousel-item {
   flex: 0 0 100%; 
   display: inline-flex;
@@ -31,11 +27,9 @@
 } */
 
 .carousel-item-text {
+  line-height: 1.6;
+  margin-top: 20px;
   font-size: 1.2rem;
-  white-space: normal;
-  color: #617d98;
-  margin-right: 10px;
-  width: 500px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -48,4 +42,13 @@
   height: 400px; /* Set the desired height of the image */
   border-radius: 25px; 
 }
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+  }
 
+  
+}

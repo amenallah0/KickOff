@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React from "react";
 import "./Stade.css"; // Import your CSS file
 import tarton from '../../../images/dimensions.jpeg'
 import tarton1 from '../../../images/tarton1.jpg'
-import Carousel from "../Test/Carousel";
+
 import Description from "../description/Description";
+import Carousel from "./Carouselitem";
 
 const Stade = () => {
-  const sliderRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [showAnimation, setShowAnimation] = useState(false);
   const images = [
     tarton,
     tarton1
